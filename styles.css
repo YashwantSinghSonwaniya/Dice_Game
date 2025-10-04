@@ -1,0 +1,106 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Main container */
+.container {
+  margin-top: 50px;
+}
+
+/* Heading */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Dice container */
+.dice-area {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* Individual dice box */
+.dice p {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.dice img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Animation on roll */
+.dice img.roll {
+  transform: rotate(360deg);
+}
+
+/* Roll button */
+#roll-btn {
+  background-color: #ffffff;
+  color: #0072ff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#roll-btn:hover {
+  background-color: #0072ff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  padding: 20px;
+  opacity: 0.8;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .dice-area {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .dice img {
+    width: 100px;
+    height: 100px;
+  }
+
+  #roll-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
