@@ -94,3 +94,31 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("#roll-btn not found in DOM");
   }
 });
+
+let audioUnlocked = false;
+
+function unlockAudio() {
+  if (!audioUnlocked) {
+    diceAudio.volume = 0;
+    diceAudio.play().then(() => {
+      diceAudio.pause();
+      diceAudio.currentTime = 0;
+      diceAudio.volume = 1;
+      audioUnlocked = true;
+    }).catch(() => {
+      // ignore errors
+    });
+  }
+}
+
+// On button click/touch
+rollBtn.addEventListener("click", () => {
+  unlockAudio();
+  rollDice(true);
+});
+
+rollBtn.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  unlockAudio();
+  rollDice(true);
+}, { passive: false });
